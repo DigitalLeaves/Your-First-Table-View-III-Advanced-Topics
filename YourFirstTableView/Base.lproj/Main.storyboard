@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -60,11 +62,70 @@
                     <navigationItem key="navigationItem" title="My First Table View" id="mw1-3e-TI4"/>
                     <connections>
                         <outlet property="tableView" destination="jPT-Ou-pxQ" id="P3m-Ww-XNk"/>
+                        <segue destination="sF9-sS-FMZ" kind="show" identifier="showAnimalDetails" id="Caa-3s-Mdy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1076" y="138.98050974512745"/>
+        </scene>
+        <!--Animal Description View Controller-->
+        <scene sceneID="mQi-ly-6eh">
+            <objects>
+                <viewController id="sF9-sS-FMZ" customClass="AnimalDescriptionViewController" customModule="YourFirstTableView" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hfJ-xg-J2y"/>
+                        <viewControllerLayoutGuide type="bottom" id="KZA-B3-AJf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DTY-Zy-wA8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="crocodile" translatesAutoresizingMaskIntoConstraints="NO" id="xrC-wo-fQY">
+                                <rect key="frame" x="123" y="110" width="128" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="xrC-wo-fQY" secondAttribute="height" id="ML4-Ws-MDb"/>
+                                    <constraint firstAttribute="height" constant="128" id="m9m-H6-FxH"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crocodile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e31-zC-cWt">
+                                <rect key="frame" x="116.5" y="262" width="142.5" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="0av-cN-eEm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="uvg-2z-1u1">
+                                <rect key="frame" x="16" y="307" width="343" height="340"/>
+                                <mutableString key="text">Crocodiles (subfamily Crocodylinae) or true crocodiles are large aquatic reptiles that live throughout the tropics in Africa, Asia, the Americas and Australia. Crocodylinae, all of whose members are considered true crocodiles, is classified as a biological subfamily. A broader sense of the term crocodile, Crocodylidae that includes Tomistoma, is not used in this article. The term crocodile here applies only to the species within the subfamily of Crocodylinae. The term is sometimes used even more loosely to include all extant members of the order Crocodilia, which includes Tomistoma, the alligators and caimans (family Alligatoridae), the gharials (family Gavialidae), and all other living and fossil Crocodylomorpha.</mutableString>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="16"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="uvg-2z-1u1" firstAttribute="leading" secondItem="DTY-Zy-wA8" secondAttribute="leadingMargin" id="2do-Ep-Kek"/>
+                            <constraint firstItem="e31-zC-cWt" firstAttribute="centerX" secondItem="xrC-wo-fQY" secondAttribute="centerX" id="Fk8-f5-DtU"/>
+                            <constraint firstItem="uvg-2z-1u1" firstAttribute="trailing" secondItem="DTY-Zy-wA8" secondAttribute="trailingMargin" id="Hhm-kO-rrj"/>
+                            <constraint firstItem="xrC-wo-fQY" firstAttribute="top" secondItem="hfJ-xg-J2y" secondAttribute="bottom" constant="46" id="Z2t-ip-TnH"/>
+                            <constraint firstItem="uvg-2z-1u1" firstAttribute="top" secondItem="e31-zC-cWt" secondAttribute="bottom" constant="8" id="aby-2l-wNf"/>
+                            <constraint firstItem="xrC-wo-fQY" firstAttribute="centerX" secondItem="DTY-Zy-wA8" secondAttribute="centerX" id="hFd-vz-0eI"/>
+                            <constraint firstItem="e31-zC-cWt" firstAttribute="top" secondItem="xrC-wo-fQY" secondAttribute="bottom" constant="24" id="jOY-ya-9xS"/>
+                            <constraint firstItem="KZA-B3-AJf" firstAttribute="top" secondItem="uvg-2z-1u1" secondAttribute="bottom" constant="20" id="vlN-9p-LZg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="animalDescriptionLabel" destination="uvg-2z-1u1" id="4Lf-SC-lED"/>
+                        <outlet property="animalImageView" destination="xrC-wo-fQY" id="BKY-mc-OFI"/>
+                        <outlet property="animalNameLabel" destination="e31-zC-cWt" id="hba-ws-X1j"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1ao-Re-TMe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2045.5999999999999" y="138.98050974512745"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pvD-Z4-mi0">
@@ -85,4 +146,7 @@
             <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="crocodile" width="284" height="284"/>
+    </resources>
 </document>

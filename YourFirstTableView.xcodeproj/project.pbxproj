@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6679079D1EBFAAA800BD3ADB /* AnimalDescriptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6679079C1EBFAAA800BD3ADB /* AnimalDescriptions.swift */; };
+		6679079F1EBFAC7500BD3ADB /* AnimalDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6679079E1EBFAC7500BD3ADB /* AnimalDescriptionViewController.swift */; };
+		667907A21EC05E7800BD3ADB /* AnimalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667907A01EC05E7800BD3ADB /* AnimalTableViewCell.swift */; };
+		667907A31EC05E7800BD3ADB /* AnimalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 667907A11EC05E7800BD3ADB /* AnimalTableViewCell.xib */; };
 		6694CA811EBD0757002D8B01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6694CA801EBD0757002D8B01 /* AppDelegate.swift */; };
 		6694CA831EBD0757002D8B01 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6694CA821EBD0757002D8B01 /* ViewController.swift */; };
 		6694CA861EBD0757002D8B01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6694CA841EBD0757002D8B01 /* Main.storyboard */; };
@@ -15,6 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6679079C1EBFAAA800BD3ADB /* AnimalDescriptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalDescriptions.swift; sourceTree = "<group>"; };
+		6679079E1EBFAC7500BD3ADB /* AnimalDescriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalDescriptionViewController.swift; sourceTree = "<group>"; };
+		667907A01EC05E7800BD3ADB /* AnimalTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalTableViewCell.swift; sourceTree = "<group>"; };
+		667907A11EC05E7800BD3ADB /* AnimalTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnimalTableViewCell.xib; sourceTree = "<group>"; };
 		6694CA7D1EBD0757002D8B01 /* YourFirstTableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YourFirstTableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6694CA801EBD0757002D8B01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6694CA821EBD0757002D8B01 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -55,7 +63,11 @@
 			isa = PBXGroup;
 			children = (
 				6694CA801EBD0757002D8B01 /* AppDelegate.swift */,
+				6679079C1EBFAAA800BD3ADB /* AnimalDescriptions.swift */,
+				667907A01EC05E7800BD3ADB /* AnimalTableViewCell.swift */,
+				667907A11EC05E7800BD3ADB /* AnimalTableViewCell.xib */,
 				6694CA821EBD0757002D8B01 /* ViewController.swift */,
+				6679079E1EBFAC7500BD3ADB /* AnimalDescriptionViewController.swift */,
 				6694CA841EBD0757002D8B01 /* Main.storyboard */,
 				6694CA871EBD0757002D8B01 /* Assets.xcassets */,
 				6694CA891EBD0757002D8B01 /* LaunchScreen.storyboard */,
@@ -125,6 +137,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6694CA8B1EBD0757002D8B01 /* LaunchScreen.storyboard in Resources */,
+				667907A31EC05E7800BD3ADB /* AnimalTableViewCell.xib in Resources */,
 				6694CA881EBD0757002D8B01 /* Assets.xcassets in Resources */,
 				6694CA861EBD0757002D8B01 /* Main.storyboard in Resources */,
 			);
@@ -138,6 +151,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6694CA831EBD0757002D8B01 /* ViewController.swift in Sources */,
+				6679079F1EBFAC7500BD3ADB /* AnimalDescriptionViewController.swift in Sources */,
+				6679079D1EBFAAA800BD3ADB /* AnimalDescriptions.swift in Sources */,
+				667907A21EC05E7800BD3ADB /* AnimalTableViewCell.swift in Sources */,
 				6694CA811EBD0757002D8B01 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,6 +320,7 @@
 				6694CA911EBD0757002D8B01 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

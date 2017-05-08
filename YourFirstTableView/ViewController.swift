@@ -13,11 +13,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var tableView: UITableView!
     
     // data
-    let animals = ["dog", "cat", "tiger", "lion", "giraffe", "cattle", "horse", "fox", "panda", "bear", "rat", "pig", "rhinoceros", "hippopotamus", "rabbit", "elephant", "crocodile", "bird", "sheep", "gorilla"]
+    let animals = ["dog", "cat", "tiger", "lion", "giraffe", "cow", "horse", "fox", "panda", "bear", "mouse", "pig", "rhinoceros", "hippopotamus", "rabbit", "elephant", "crocodile", "bird", "sheep", "gorilla"]
+    var selectedAnimal = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        tableView.register(UINib(nibName: "AnimalTableViewCell", bundle: nil), forCellReuseIdentifier: "AnimalTableViewCell")
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,6 +26,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // Dispose of any resources that can be recreated.
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let dvc = segue.destination as? AnimalDescriptionViewController {
+            dvc.animalName = self.selectedAnimal
+        }
+    }
+    
     // MARK: - UITableViewDelegate/DataSource methods
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -32,10 +39,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "myTableViewCell", for: indexPath) 
-        cell.textLabel?.text = animals[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AnimalTableViewCell", for: indexPath) as! AnimalTableViewCell
+        let animalName = animals[indexPath.row]
+        cell.configureWith(animalName: animalName)
         return cell
     }
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedAnimal = animals[indexPath.row]
+        self.performSegue(withIdentifier: "showAnimalDetails", sender: nil)
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 56.0
+    }
 }
 
