@@ -24,8 +24,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         // register cell nib
         tableView.register(UINib(nibName: "AnimalTableViewCell", bundle: nil), forCellReuseIdentifier: "AnimalTableViewCell")
-    
-        // init animals
         
         // add pull to refresh
         pullToRefresh.attributedTitle = NSAttributedString(string: "Pull to bring all animals back!")
