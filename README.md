@@ -1,4 +1,4 @@
-# My First Table View (III): Behavior and Custom Cells
+# My First Table View (III): Cell Actions and Pull To Refresh
 
 Sample code for the tutorial "Your First Table View (III)" from Digital Leaves (https://digitalleaves.com)
 
